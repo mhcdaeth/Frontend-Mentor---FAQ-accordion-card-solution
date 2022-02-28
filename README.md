@@ -109,8 +109,8 @@ function get(number){
 
 ### Useful resources
 
-- [Example resource 1](https://www.w3schools.com) - Best referance for every html css and js codes
-- [Example resource 2](https://www.mdn.com) - Best for more detial explaination on every css js html properties or more in my openion
+- [W3 Schools](https://www.w3schools.com) - Best referance for every html css and js codes
+- [Web Docs](https://www.mdn.com) - Best for more detial explaination on every css js html properties or more in my openion
 
 ## Author
 
