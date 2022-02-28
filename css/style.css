@@ -1,0 +1,323 @@
+:root {
+  /* font styles */
+  --font-size: 11px;
+  --text-align: center;
+  --color-a: hsl(228, 45%, 44%);
+  /*background gradient*/
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  /*text colors*/
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  /*Deviders*/
+  --light-grayish-blue: hsl(240, 5%, 91%);
+  /*body copy*/
+  --body-font-size: 12px
+;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--soft-violet)), to(var(--soft-blue)));
+  background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+  background-repeat: no-repeat;
+  display: -ms-grid;
+  display: grid;
+  font-family: 'Kumbh Sans', sans-serif;
+  -ms-grid-columns: 90%;
+      grid-template-columns: 90%;
+  -ms-grid-rows: 95% 5%;
+      grid-template-rows: 95% 5%;
+      grid-template-areas: "main" "footer";
+  place-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .card {
+  background-color: white;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: main;
+  width: 100%;
+  height: 80%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 90%;
+      grid-template-columns: 90%;
+  -ms-grid-rows: 30% 70%;
+      grid-template-rows: 30% 70%;
+      grid-template-areas: "image" "faq";
+  place-content: center;
+  border-radius: 25px;
+}
+
+body .card .box {
+  display: none;
+}
+
+body .card .image {
+  position: relative;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: image;
+  top: -60px;
+  width: 80%;
+  left: 10%;
+}
+
+body .card .image .women {
+  width: 100%;
+  z-index: 1;
+}
+
+body .card .image .pattern {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -50px;
+}
+
+body .card .faq {
+  overflow: auto;
+}
+
+body .card .faq .lists h1 {
+  text-align: center;
+}
+
+body .card .faq .lists .qAnda .q {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 90% 10%;
+      grid-template-columns: 90% 10%;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+      grid-template-areas: "q arrow";
+}
+
+body .card .faq .lists .qAnda .q p {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: q;
+}
+
+body .card .faq .lists .qAnda .q .img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: arrow;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .card .faq .lists .qAnda .a {
+  display: none;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+body .card .faq .lists .qAnda hr {
+  border: 1px solid var(--light-grayish-blue);
+}
+
+body .card .faq .lists .qAnda .bold {
+  font-weight: bold;
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+body .card .faq .lists .qAnda .view {
+  display: block;
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body .card .faq .lists .qAnda .rotate {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+body .attribution {
+  text-align: center;
+  font-size: 11px;
+}
+
+body .attribution a {
+  color: var(--color-a);
+}
+
+@media screen and (min-width: 375px) {
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--soft-violet)), to(var(--soft-blue)));
+    background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 95% 5%;
+        grid-template-rows: 95% 5%;
+        grid-template-areas: "main" "footer";
+    place-items: center;
+  }
+  body .card {
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    border-radius: 25px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 40% 60%;
+        grid-template-columns: 40% 60%;
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "image faq";
+    position: relative;
+    place-content: center;
+  }
+  body .card .box {
+    display: block;
+    position: absolute;
+    left: -7%;
+    top: 45%;
+    z-index: 1;
+    width: 15%;
+  }
+  body .card .image {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: image;
+    position: relative;
+    overflow: hidden;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+  }
+  body .card .image .women {
+    position: absolute;
+    left: -50px;
+  }
+  body .card .image .pattern {
+    position: absolute;
+    width: 220%;
+    left: -135%;
+    bottom: -15%;
+  }
+  body .card .faq {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: faq;
+    height: 100%;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
+  body .card .faq .lists {
+    width: 80%;
+  }
+  body .card .faq .lists h1 {
+    text-align: left;
+  }
+  body .card .faq .lists .qAnda {
+    width: 100%;
+  }
+  body .card .faq .lists .qAnda .q {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 90% 10%;
+        grid-template-columns: 90% 10%;
+        grid-template-areas: "q arrow";
+    width: 100%;
+  }
+  body .card .faq .lists .qAnda .q p {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: q;
+  }
+  body .card .faq .lists .qAnda .q .img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: arrow;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body .card .faq .lists .qAnda .q:hover {
+    color: orange;
+    cursor: pointer;
+  }
+  body .card .faq .lists .qAnda .a {
+    display: none;
+  }
+  body .card .faq .lists .qAnda .view {
+    display: block;
+  }
+  body .card .faq .lists .qAnda .bold {
+    font-weight: bold;
+  }
+  body .card .faq .lists .qAnda .rotate {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  body .txt {
+    display: none;
+  }
+  body .attribution {
+    text-align: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: footer;
+    font-size: 11px;
+  }
+  body .attribution a {
+    color: var(--color-a);
+  }
+}
+/*# sourceMappingURL=style.css.map */

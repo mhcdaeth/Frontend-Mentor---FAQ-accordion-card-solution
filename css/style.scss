@@ -1,0 +1,306 @@
+:root {
+
+    /* font styles */
+    --font-size: 11px;
+    --text-align: center;
+    --color-a: hsl(228, 45%, 44%);
+
+    /*background gradient*/
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+
+    
+    /*text colors*/
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /*Deviders*/
+    --light-grayish-blue: hsl(240, 5%, 91%);
+
+    /*body copy*/
+    --body-font-size: 12px
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: linear-gradient(
+        var(--soft-violet), var(--soft-blue)
+    );
+    background-repeat: no-repeat;
+    display: grid;
+    font-family: 'Kumbh Sans', sans-serif;
+    grid-template-columns: 90%;
+    grid-template-rows: 95% 5%;
+    grid-template-areas: 
+    "main"
+    "footer"
+    ;
+    place-content: center;
+    align-items: center;
+
+    .card{
+        background-color: white;
+        grid-area: main;
+        width: 100%;
+        height: 80%;
+        display: grid;
+        grid-template-columns: 90%;
+        grid-template-rows: 30% 70%;
+        grid-template-areas:
+        "image"
+        "faq" 
+        ;
+        place-content: center;
+        border-radius: 25px;
+
+        .box{
+            display: none;
+        }
+
+        .image{
+            position: relative;
+            grid-area: image;
+            top: -60px;
+            width: 80%;
+            left: 10%;
+
+            .women{
+                width: 100%;
+                z-index: 1;
+            }
+
+            .pattern{
+                position: absolute;
+                width: 100%;
+                left: 0;
+                bottom: -50px;
+            }
+        }
+
+        .faq{
+            overflow: auto;
+
+            .lists{
+
+                h1{
+                    text-align: center;
+                }
+
+                .qAnda{
+
+                    .q{
+                        display: grid;
+                        grid-template-columns: 90% 10%;
+                        grid-template-rows: 100%;
+                        grid-template-areas:
+                        "q arrow" 
+                        ;
+
+                        p{
+                            grid-area: q;
+                        }
+
+                        .img{
+                            grid-area: arrow;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+
+                    .a{
+                        display: none;
+                        transition-duration: 1s;
+                        animation-name: fade;
+                        animation-duration: 1s;
+                    }
+
+                    hr {
+                        border: 1px solid var(--light-grayish-blue);
+                    }
+                    
+                    .bold{
+
+                        font-weight: bold;  
+                        animation-name: fade;
+                        animation-duration: 1s;
+                    }
+
+                    .view{
+                        display: block;
+                        animation-name: fade;
+                        animation-duration: 1s;
+                    }
+
+                    @keyframes fade {
+                        from {opacity: 0;}
+                        to { opacity: 1;}
+                    }
+
+                    .rotate{
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .attribution{
+        text-align: center;
+        font-size: 11px;
+
+        a{
+            color: var(--color-a);
+        }
+    }
+}
+
+
+@media screen and (min-width: 375px) {
+
+    body{
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-image: linear-gradient(
+            var(--soft-violet), var(--soft-blue)
+        );
+        display: grid;
+        grid-template-rows: 95% 5%;
+        grid-template-areas: 
+        "main"
+        "footer"
+        ;
+        place-items: center;
+    
+    
+        .card{
+            background-color: white;
+            width: 80%;
+            height: 80%;
+            border-radius: 25px;
+            display: grid;
+            grid-template-columns: 40% 60%;
+            grid-template-rows: 100%;
+            grid-template-areas:
+            "image faq" 
+            ;
+            position: relative;
+            place-content: center;
+            
+    
+            .box{
+                display: block;
+                position: absolute;
+                left: -7%;
+                top: 45%;
+                z-index: 1;
+                width: 15%;
+            }
+            .image{
+                grid-area: image;
+                position: relative;
+                overflow: hidden;
+                display: grid;
+                place-items: center;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                width: 100%;
+    
+                .women{
+                    position: absolute;
+                    left: -50px;
+                }
+    
+                .pattern{
+                    position: absolute;
+                    width: 220%;
+                    left: -135%;
+                    bottom: -15%;
+                }
+            }
+    
+            .faq{
+                grid-area: faq;
+                height: 100%;
+                width: 100%;   
+                display: grid;
+                place-items: center; 
+                
+                .lists{
+                    width: 80%;
+
+                    h1{
+                        text-align: left;
+                    }
+                    .qAnda{
+                        width: 100%;
+                        
+                    .q{
+                        display: grid;
+                        grid-template-columns: 90% 10%;
+                        grid-template-areas: 
+                        "q arrow"
+                        ;
+                        width: 100%;
+                        
+                        p{
+                            grid-area: q;
+                        }
+        
+                        .img{
+                            grid-area: arrow;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        
+                    }
+
+                    .q:hover{
+                        color: orange;
+                        cursor: pointer;
+                    }
+        
+                    .a{
+                        display: none;
+                    }
+
+                    .view{
+                        display: block;
+                    }
+
+                    .bold{
+
+                        font-weight: bold;  
+                    }
+
+                    .rotate{
+                        transform: rotate(180deg);
+                    }
+                    }
+                }
+    
+                
+            }
+        }
+        .txt{
+            display: none;
+        }
+    
+    
+        .attribution{
+            text-align: center;
+            grid-area: footer;
+            font-size: 11px;
+    
+            a{
+                color: var(--color-a);
+            }
+        }
+    }
+}
